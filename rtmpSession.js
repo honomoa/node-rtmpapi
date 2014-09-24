@@ -65,7 +65,7 @@ var RtmpStream = function(sock,isClient,cb) {
  */
 RtmpStream.prototype.rtmpSendHandshakeC0 = function() {
     var me = this;
-    this.Q.Q(0,function() {
+    this.Q.Q(0,function(data) {
         var buffer = new Buffer(1);
         buffer.writeUInt8(3,0); // RTMP Version
         me.sock.write(buffer);
